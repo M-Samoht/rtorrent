@@ -1,0 +1,3 @@
+build_image:
+  script:
+    - docker build -t loleske/rtorrent:$CI_COMMIT_SHA .
