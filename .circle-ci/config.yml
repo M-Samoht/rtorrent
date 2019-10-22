@@ -1,0 +1,10 @@
+version: 2
+ jobs:
+   build:
+     docker:
+       - image: docker
+     steps:
+       - checkout
+       - run: |
+        docker login cloud.canister.io:5000 $REGISTRY_URL $REGISTRY_PASSWORD
+        docker build -t cloud.canister.io:5000/msamoht/rtorrent:$CIRCLE_SHA1 -t cloud.canister.io:5000/msamoht/rtorrent:latest

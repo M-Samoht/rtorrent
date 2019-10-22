@@ -1,4 +1,0 @@
-build_image:
-  script:
-    - docker build -t t.melesi/rtorrent:$CI_COMMIT_SHA .
-    - docker push t.melesi/rtorrent:$CI_COMMIT_SHA
