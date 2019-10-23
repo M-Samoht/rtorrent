@@ -2,9 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: docker
+      - image: docker # the primary container, where your job's commands are run
     steps:
-      - checkout
-      - run: |
-        docker login cloud.canister.io:5000 $REGISTRY_URL $REGISTRY_PASSWORD
-        docker build -t cloud.canister.io:5000/msamoht/rtorrent:$CIRCLE_SHA1 -t cloud.canister.io:5000/msamoht/rtorrent:latest
+      - checkout # check out the code in the project directory
+      - run: echo "hello world" # run the `echo` command
