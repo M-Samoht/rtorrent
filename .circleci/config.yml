@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
   build:
-    DOCKER:
+    docker:
       - image: docker # the primary container, where your job's commands are run
     steps:
       - setup_remote_docker
