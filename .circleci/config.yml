@@ -6,8 +6,7 @@ jobs:
     steps:
       - setup_remote_docker
       - checkout # check out the code in the project directory
-      - run:
-        command: echo "build image tag $CIRCLE_SHA1"
+      - run: echo "build image tag $CIRCLE_SHA1"
       - run: docker login -u $REGISTRY_USER -p $REGISTRY_PASSWORD cloud.canister.io:5000
       - run: docker build -t cloud.canister.io:5000/msamoht/rtorrent:$CIRCLE_SHA1 -t cloud.canister.io:5000/msamoht/rtorrent:latest .
       - run: docker push cloud.canister.io:5000/msamoht/rtorrent:$CIRCLE_SHA1
